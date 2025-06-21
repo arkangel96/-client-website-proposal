@@ -7,7 +7,7 @@ import ContactForm from "../components/ContactForm";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from '../contexts/LanguageContext';
 import HeroSection from "../components/HeroSection";
-import heroVideo from "/lovable-uploads/20250617_1947_Cinematic Petrochemical Dusk_simple_compose_01jxyr00rdf8crrx79e0g4pw8p.mp4";
+import heroVideo from "/lovable-uploads/hero-video.mp4";
 
 const Index = () => {
   const { t } = useLanguage();

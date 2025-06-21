@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroVideo from "/lovable-uploads/20250617_1947_Cinematic Petrochemical Dusk_simple_compose_01jxyr00rdf8crrx79e0g4pw8p.mp4";
+import heroVideo from "/lovable-uploads/hero-video.mp4";
 
 const HeroSection = () => {
   return (
