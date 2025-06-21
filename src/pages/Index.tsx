@@ -112,7 +112,7 @@ const Index = () => {
       </div>
 
       {/* About Us Summary */}
-      <section className="py-20">
+      <section className="py-20" style={{ backgroundColor: '#f7f9fc' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="fade-in-on-scroll">
@@ -142,10 +142,12 @@ const Index = () => {
       </section>
 
       {/* Services Carousel */}
-      <ServicesCarousel />
+      <section className="py-20">
+        <ServicesCarousel />
+      </section>
 
       {/* Project Highlights */}
-      <section className="py-20">
+      <section className="py-20" style={{ backgroundColor: '#f7f9fc' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 fade-in-on-scroll">
             <h2 className="text-4xl font-bold text-lovable-text mb-6">
@@ -240,7 +242,7 @@ const Index = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20">
+      <section className="py-20" style={{ backgroundColor: '#edf2f7' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="fade-in-on-scroll">

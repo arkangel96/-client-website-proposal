@@ -19,10 +19,16 @@ export default {
 		},
 		extend: {
 			colors: {
+				'section-subtle': '#f7f9fc',
+				'section-blue': '#edf2f7',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
+				background: {
+					DEFAULT: 'hsl(var(--background))',
+					'section-subtle': '#f7f9fc',
+					'section-blue': '#edf2f7',
+				},
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: '#005B99',
@@ -67,7 +73,8 @@ export default {
 				'primary-blue-hover': '#003F66',
 				'light-gray': '#F5F5F5',
 				'text-primary': '#333333',
-				'text-secondary': '#666666'
+				'text-secondary': '#666666',
+				'lovable-text-light': '#4a5568',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -142,7 +149,11 @@ export default {
 			},
 			fontFamily: {
 				'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif']
-			}
+			},
+			backgroundColor: {
+				'section-subtle': '#f7f9fc',
+				'section-blue': '#edf2f7',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
