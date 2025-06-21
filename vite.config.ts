@@ -4,7 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/best-engineers-proposal-website/",
+  base: "/-client-website-proposal/",
   plugins: [react()],
   resolve: {
     alias: {
