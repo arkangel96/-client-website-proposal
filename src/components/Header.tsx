@@ -119,7 +119,6 @@ const Header: React.FC<HeaderProps> = ({ darkOnLight = false }) => {
                 <div
                   key={item.title}
                   className="relative"
-                  onMouseEnter={() => handleMouseEnter(item.title)}
                   onMouseLeave={handleMouseLeave}
                 >
                   <Link
@@ -135,13 +134,17 @@ const Header: React.FC<HeaderProps> = ({ darkOnLight = false }) => {
                       textShadow: darkOnLight ? 'none' : '0 1px 4px rgba(0,0,0,0.5)',
                       textTransform: 'uppercase',
                     }}
+                    onMouseEnter={() => handleMouseEnter(item.title)}
                   >
                     <span>{item.title}</span>
                     {item.subItems.length > 0 && <ChevronDown className="w-4 h-4 ml-1" />}
                   </Link>
 
                   {item.subItems.length > 0 && activeDropdown === item.title && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50">
+                    <div
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50"
+                      onMouseEnter={() => handleMouseEnter(item.title)}
+                    >
                       {item.subItems.map((subItem) => (
                         <Link
                           key={subItem.title}
