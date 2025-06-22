@@ -45,82 +45,65 @@ import NewsAnnouncements from "./pages/NewsAnnouncements";
 import NewsCompanyBrochure from "./pages/NewsCompanyBrochure";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
-import logo from '/lovable-uploads/logo.png';
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <LanguageProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter basename="/-client-website-proposal">
-          <Routes>
-            <Route path="/" element={<Index />} />
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <LanguageProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter basename="/-client-website-proposal">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/about-overview" element={<AboutOverview />} />
+              <Route path="/about-values" element={<AboutValues />} />
+              <Route path="/about-ceo-message" element={<AboutCeoMessage />} />
+              <Route path="/about-history" element={<AboutHistory />} />
+              <Route path="/about-business-permits" element={<AboutBusinessPermits />} />
+              <Route path="/about-location" element={<AboutLocation />} />
+              <Route path="/key-services" element={<KeyServices />} />
+              <Route path="/key-services-engineering" element={<KeyServicesEngineering />} />
+              <Route path="/key-services-procurement" element={<KeyServicesProcurement />} />
+              <Route path="/key-services-construction" element={<KeyServicesConstruction />} />
+              <Route path="/key-services-commissioning" element={<KeyServicesCommissioning />} />
+              <Route path="/key-services-project-management" element={<KeyServicesProjectManagement />} />
+              <Route path="/key-services-technical-consulting" element={<KeyServicesTechnicalConsulting />} />
+              <Route path="/businesses" element={<Businesses />} />
+              <Route path="/businesses-petrochemical" element={<BusinessesPetrochemical />} />
+              <Route path="/businesses-refinery" element={<BusinessesRefinery />} />
+              <Route path="/businesses-power-generation" element={<BusinessesPowerGeneration />} />
+              <Route path="/core-technologies" element={<CoreTechnologies />} />
+              <Route path="/core-technologies-flare-stack-fabrication" element={<CoreTechnologiesFlareStack />} />
+              <Route path="/core-technologies-h2-facilities-production" element={<CoreTechnologiesH2Facilities />} />
+              <Route path="/core-technologies-co2-purification" element={<CoreTechnologiesCO2Purification />} />
+              <Route path="/core-technologies-patents" element={<CoreTechnologiesPatents />} />
+              <Route path="/sustainability" element={<Sustainability />} />
+              <Route path="/sustainability-quality-management" element={<SustainabilityQualityManagement />} />
+              <Route path="/sustainability-environmental-management" element={<SustainabilityEnvironmentalManagement />} />
+              <Route path="/sustainability-safety-health-management" element={<SustainabilitySafetyHealthManagement />} />
+              <Route path="/sustainability-ethics-compliance-management" element={<SustainabilityEthicsComplianceManagement />} />
+              <Route path="/sustainability-ethics-compliance-report-center" element={<SustainabilityEthicsComplianceReportCenter />} />
+              <Route path="/sustainability-security-policy" element={<SustainabilitySecurityPolicy />} />
+              <Route path="/sustainability-new-business-partner-registration" element={<SustainabilityNewBusinessPartnerRegistration />} />
+              <Route path="/recruitment" element={<Recruitment />} />
+              <Route path="/recruitment-ideal-talent" element={<RecruitmentIdealTalent />} />
+              <Route path="/recruitment-welfare-policy" element={<RecruitmentWelfarePolicy />} />
+              <Route path="/recruitment-recruitment-pool-registration" element={<RecruitmentRecruitmentPoolRegistration />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/news-announcements" element={<NewsAnnouncements />} />
+              <Route path="/news-company-brochure" element={<NewsCompanyBrochure />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </LanguageProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
-            {/* About Us Routes */}
-            <Route path="/about" element={<About />} />
-            <Route path="/about-overview" element={<AboutOverview />} />
-            <Route path="/about-values" element={<AboutValues />} />
-            <Route path="/about-ceo-message" element={<AboutCeoMessage />} />
-            <Route path="/about-history" element={<AboutHistory />} />
-            <Route path="/about-business-permits" element={<AboutBusinessPermits />} />
-            <Route path="/about-location" element={<AboutLocation />} />
-
-            {/* Key Services Routes */}
-            <Route path="/key-services" element={<KeyServices />} />
-            <Route path="/key-services-engineering" element={<KeyServicesEngineering />} />
-            <Route path="/key-services-procurement" element={<KeyServicesProcurement />} />
-            <Route path="/key-services-construction" element={<KeyServicesConstruction />} />
-            <Route path="/key-services-commissioning" element={<KeyServicesCommissioning />} />
-            <Route path="/key-services-project-management" element={<KeyServicesProjectManagement />} />
-            <Route path="/key-services-technical-consulting" element={<KeyServicesTechnicalConsulting />} />
-
-            {/* Businesses Routes */}
-            <Route path="/businesses" element={<Businesses />} />
-            <Route path="/businesses-petrochemical" element={<BusinessesPetrochemical />} />
-            <Route path="/businesses-refinery" element={<BusinessesRefinery />} />
-            <Route path="/businesses-power-generation" element={<BusinessesPowerGeneration />} />
-
-            {/* Core Technologies Routes */}
-            <Route path="/core-technologies" element={<CoreTechnologies />} />
-            <Route path="/core-technologies-flare-stack-fabrication" element={<CoreTechnologiesFlareStack />} />
-            <Route path="/core-technologies-h2-facilities-production" element={<CoreTechnologiesH2Facilities />} />
-            <Route path="/core-technologies-co2-purification" element={<CoreTechnologiesCO2Purification />} />
-            <Route path="/core-technologies-patents" element={<CoreTechnologiesPatents />} />
-
-            {/* Sustainability Routes */}
-            <Route path="/sustainability" element={<Sustainability />} />
-            <Route path="/sustainability-quality-management" element={<SustainabilityQualityManagement />} />
-            <Route path="/sustainability-environmental-management" element={<SustainabilityEnvironmentalManagement />} />
-            <Route path="/sustainability-safety-health-management" element={<SustainabilitySafetyHealthManagement />} />
-            <Route path="/sustainability-ethics-compliance-management" element={<SustainabilityEthicsComplianceManagement />} />
-            <Route path="/sustainability-ethics-compliance-report-center" element={<SustainabilityEthicsComplianceReportCenter />} />
-            <Route path="/sustainability-security-policy" element={<SustainabilitySecurityPolicy />} />
-            <Route path="/sustainability-new-business-partner-registration" element={<SustainabilityNewBusinessPartnerRegistration />} />
-
-            {/* Recruitment Routes */}
-            <Route path="/recruitment" element={<Recruitment />} />
-            <Route path="/recruitment-ideal-talent" element={<RecruitmentIdealTalent />} />
-            <Route path="/recruitment-welfare-policy" element={<RecruitmentWelfarePolicy />} />
-            <Route path="/recruitment-recruitment-pool-registration" element={<RecruitmentRecruitmentPoolRegistration />} />
-
-            {/* News Routes */}
-            <Route path="/news" element={<News />} />
-            <Route path="/news-announcements" element={<NewsAnnouncements />} />
-            <Route path="/news-company-brochure" element={<NewsCompanyBrochure />} />
-
-            {/* Contact Route */}
-            <Route path="/contact" element={<Contact />} />
-
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </LanguageProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
-
-export default App;
+export default App; 

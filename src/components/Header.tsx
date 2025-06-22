@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import logoImg from '/lovable-uploads/logo.png';
@@ -11,6 +11,20 @@ const Header: React.FC<HeaderProps> = ({ darkOnLight = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
+  const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (title: string) => {
+    if (dropdownTimeout.current) {
+      clearTimeout(dropdownTimeout.current);
+    }
+    setActiveDropdown(title);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeout.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 200); // 200ms delay before closing
+  };
 
   const menuItems = [
     {
@@ -105,8 +119,8 @@ const Header: React.FC<HeaderProps> = ({ darkOnLight = false }) => {
                 <div
                   key={item.title}
                   className="relative"
-                  onMouseEnter={() => setActiveDropdown(item.title)}
-                  onMouseLeave={() => setActiveDropdown(null)}
+                  onMouseEnter={() => handleMouseEnter(item.title)}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <Link
                     to={item.href}
